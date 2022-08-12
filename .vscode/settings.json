@@ -1,0 +1,12 @@
+{
+    "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
+    "editor.formatOnSave": true,
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "rust-analyzer.updates.channel": "stable",
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-proc-macro",
+        "unresolved-macro-call",
+        "unresolved-import"
+    ]
+}
