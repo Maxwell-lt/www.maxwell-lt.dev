@@ -78,14 +78,14 @@
           packages.${name} = project.rootCrate.build;
 
           # `nix build`
-          defaultPackage = packages.${name};
+          packages.default = packages.${name};
 
           # `nix run`
           apps.${name} = utils.lib.mkApp {
             inherit name;
             drv = packages.${name};
           };
-          defaultApp = apps.${name};
+          apps.default = apps.${name};
 
           # `nix develop`
           devShell = pkgs.mkShell
