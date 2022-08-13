@@ -1,5 +1,5 @@
 [package]
-name = "personal_website"
+name = "maxwell-lt-dev"
 description = "Web server backing https://maxwell-lt.dev"
 version = "0.1.0"
 edition = "2021"
@@ -8,6 +8,7 @@ edition = "2021"
 
 [dependencies]
 rocket = "0.5.0-rc.2"
+structopt = "0.3.26"
 
 [build-dependencies]
 npm_rs = "0.2.1"
