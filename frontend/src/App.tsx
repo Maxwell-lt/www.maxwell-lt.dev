@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { CssBaseline, Theme, createTheme } from '@mui/material';
+import { ThemeProvider } from '@emotion/react';
+import Nav from "./Nav";
+import About from "./About";
+
+const darkTheme: Theme = createTheme({
+  palette: {
+    primary: {
+      main: "#ACC359"
+    },
+    secondary: {
+      main: "#F1C941"
+    },
+    background: {
+      default: "#303030"
+    },
+    text: {
+      primary: '#F0F0F0',
+    },
+    mode: 'dark'
+  }
+});
+
+const lightTheme: Theme = createTheme({
+  palette: {
+    primary: {
+      main: "#ACC359"
+    },
+    secondary: {
+      main: "#F1C941"
+    },
+    background: {
+      default: "#F0F0F0"
+    },
+    text: {
+      primary: '#303030',
+    },
+    mode: 'light'
+  }
+});
+
+class App extends React.Component<{}, { theme: boolean }> {
+  constructor(props: any) {
+    super(props);
+    this.state = { theme: true }
+  }
+
+  render() {
+    return (
+      <ThemeProvider theme={this.state.theme ? darkTheme : lightTheme}>
+        <CssBaseline></CssBaseline>
+        <Nav currentTheme={this.state.theme} switchTheme={(newTheme: boolean) => this.setState({ theme: newTheme })} />
+
+        <About />
+      </ThemeProvider>
+
+    );
+  }
 }
 
 export default App;
