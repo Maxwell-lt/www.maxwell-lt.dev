@@ -73,9 +73,39 @@
           buildEnvVars = {
             PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
           };
+
+          nodejs = pkgs.nodejs-16_x;
+          node2nixOutput = import ./frontend { inherit pkgs nodejs system; };
+          nodeDeps = node2nixOutput.nodeDependencies;
+          frontend = pkgs.stdenv.mkDerivation {
+            name = "frontend";
+            src = ./frontend;
+            buildInputs = [ nodejs ];
+            buildPhase = ''
+              runHook preBuild
+              
+              mkdir -p ./node_modules/.cache
+              chmod -R +rwx ./node_modules/.cache
+              cp -a ${nodeDeps}/lib/node_modules/. ./node_modules/
+              pwd
+              ls -la .
+              ls -la ./node_modules
+              export PATH="${nodeDeps}/bin:$PATH"
+
+              npm run build --loglevel silly
+
+              runHook postBuild
+            '';
+            installPhase = ''
+              runHook preInstall
+
+              cp -r build $out
+            '';
+          };
         in
         rec {
           packages.${name} = project.rootCrate.build;
+          packages.frontend = frontend;
 
           # `nix build`
           packages.default = packages.${name};
@@ -86,6 +116,10 @@
             drv = packages.${name};
           };
           apps.default = apps.${name};
+
+          apps.frontend = utils.lib.mkApp {
+            drv = packages.frontend;
+          };
 
           # `nix develop`
           devShell = pkgs.mkShell
