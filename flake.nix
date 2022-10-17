@@ -106,20 +106,29 @@
         rec {
           packages.${name} = project.rootCrate.build;
           packages.frontend = frontend;
+          packages.serve = pkgs.writeShellScriptBin "serve" ''
+            export FRONTEND_FILES_LOCATION="${packages.frontend}"
+            ${packages.${name}}/bin/${name}
+          '';
 
           # `nix build`
-          packages.default = packages.${name};
+          packages.default = packages.serve;
 
-          # `nix run`
           apps.${name} = utils.lib.mkApp {
             inherit name;
             drv = packages.${name};
           };
-          apps.default = apps.${name};
 
           apps.frontend = utils.lib.mkApp {
             drv = packages.frontend;
           };
+
+          apps.serve = utils.lib.mkApp {
+            drv = packages.serve;
+          };
+
+          # `nix run`
+          apps.default = apps.serve;
 
           # `nix develop`
           devShell = pkgs.mkShell
