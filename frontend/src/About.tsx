@@ -108,6 +108,17 @@ class About extends React.Component {
                             I was successful in this attempt, and my cursetool-rs implementation has been in use for a while now.
                         </Typography>
                     </ProjectCard>
+                    <ProjectCard title="This page!" links={[
+                        { title: "GitHub", href: "https://github.com/Maxwell-lt/www.maxwell-lt.dev" }
+                    ]}>
+                        <Typography variant="body1">
+                            This website uses a frontend written in React, using the Material UI component library. It's currently deployed as a static website served by Nginx,
+                            running on a NixOS dedicated server. There's also a backend component written in Rust with the <Link href="https://rocket.rs/" underline="hover">Rocket</Link> web framework,
+                            which might in the future be used behind Nginx to serve dynamic and interactive content.
+                            On a computer with the Nix package manager installed (and the experimental Flakes feature enabled), a customized development environment can be entered with the "nix develop"
+                            command, and the website will be compiled and executed with the "nix run" command.
+                        </Typography>
+                    </ProjectCard>
                 </Grid>
                 <Grid item lg={3} xs={10}>
                     <Typography variant="h2">
