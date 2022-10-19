@@ -9,46 +9,6 @@ class About extends React.Component {
             <Grid className="about-grid-container" container direction="row" justifyContent="center" alignItems="stretch" spacing={2} sx={{ marginTop: "1em" }}>
                 <Grid item lg={3} xs={10}>
                     <Typography variant="h2">
-                        Biography
-                    </Typography>
-                    <Card className="about-grid-card" sx={{ mt: 1, mb: 1 }}>
-                        <CardHeader title="My Story" />
-                        <CardContent>
-                            <Typography variant="body1" mb={1}>
-                                Hi, I'm Maxwell L-T!
-                            </Typography>
-                            <Typography variant="body1" mb={1}>
-                                My journey into tech began when I attended the first Detroit Maker Faire at ten years old, which sparked my interest in building things.
-                                I played around with carpentry and electronics, but was far more fascinated by the microcontroller embedded within my electronics kit than anything else.
-                                During a daycamp focusing on game development with Blender, I was shown glimpses of the power of the embedded Python interpreter over the drag-and-drop logic system I used.
-                                This led me to exploring the basics of programming with <Link href="https://justbasic.com/index.html" underline="hover">Just BASIC</Link>, before I jumped into
-                                Python so I could fiddle with its game libraries.
-                            </Typography>
-                            <Typography variant="body1" mb={1}>
-                                In 2017, I started working on my first major project, a Minecraft mod written in Java for the Forge modding API.
-                                Prior to this project, I had never used Java, and jumping directly into using the poorly-documented Forge API was not easy. I pushed through with much help from a few
-                                guides written for similar versions of Minecraft and Forge, as well as source code from the many open-source mods available on GitHub. I published the mod to Curseforge,
-                                the primary site for finding Minecraft mods for the desktop version.
-                            </Typography>
-                            <Typography variant="body1" mb={1}>
-                                Between 2017 and 2019, I obtained an Associate's Degree in computer science, during which I finally got exposure to the higher-level concepts in programming such as OOP,
-                                data structures, and functional programming.
-                            </Typography>
-                            <Typography variant="body1" mb={1}>
-                                For a few months starting at the end of 2019, I attended the <Link href="https://perscholas.org/courses/full-stack-java-developer/detroit/" underline="hover">
-                                    Java Developer course offered by Per Scholas</Link>, and from that course was directly recruited to Ford Motor Company. During the course, I learned about
-                                relational databases (RDBMS), test driven development (TDD), object-relational mapping (ORM), and the Spring Framework, and gained a deeper understanding of
-                                web design and best practices in Java development.
-                            </Typography>
-                            <Typography variant="body1" mb={1}>
-                                At Ford, I've been developing and maintaining microservices built with Spring Boot and single-page web apps built with Angular, as well as maintaining CI/CD pipelines
-                                built in Jenkins and building new pipelines with Tekton.
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </Grid>
-                <Grid item lg={3} xs={10}>
-                    <Typography variant="h2">
                         Projects
                     </Typography>
                     <ProjectCard title="Mob Blocker"
@@ -119,6 +79,43 @@ class About extends React.Component {
                             command, and the website will be compiled and executed with the "nix run" command.
                         </Typography>
                     </ProjectCard>
+                </Grid>
+                <Grid item lg={3} xs={10}>
+                    <Typography variant="h2">
+                        Biography
+                    </Typography>
+                    <Card className="about-grid-card" sx={{ mt: 1, mb: 1 }}>
+                        <CardHeader title="My Story" />
+                        <CardContent>
+                            <Typography variant="body1" mb={1}>
+                                My journey into tech began when I attended the first Detroit Maker Faire at ten years old, which sparked my interest in building things.
+                                I played around with carpentry and electronics, but was far more fascinated by the microcontroller embedded within my electronics kit than anything else.
+                                During a daycamp focusing on game development with Blender, I was shown glimpses of the power of the embedded Python interpreter over the drag-and-drop logic system I used.
+                                This led me to exploring the basics of programming with <Link href="https://justbasic.com/index.html" underline="hover">Just BASIC</Link>, before I jumped into
+                                Python so I could fiddle with its game libraries.
+                            </Typography>
+                            <Typography variant="body1" mb={1}>
+                                In 2017, I started working on my first major project, a Minecraft mod written in Java for the Forge modding API.
+                                Prior to this project, I had never used Java, and jumping directly into using the poorly-documented Forge API was not easy. I pushed through with much help from a few
+                                guides written for similar versions of Minecraft and Forge, as well as source code from the many open-source mods available on GitHub. I published the mod to Curseforge,
+                                the primary site for finding Minecraft mods for the desktop version.
+                            </Typography>
+                            <Typography variant="body1" mb={1}>
+                                Between 2017 and 2019, I obtained an Associate's Degree in computer science, during which I finally got exposure to the higher-level concepts in programming such as OOP,
+                                data structures, and functional programming.
+                            </Typography>
+                            <Typography variant="body1" mb={1}>
+                                For a few months starting at the end of 2019, I attended the <Link href="https://perscholas.org/courses/full-stack-java-developer/detroit/" underline="hover">
+                                    Java Developer course offered by Per Scholas</Link>, and from that course was directly recruited to Ford Motor Company. During the course, I learned about
+                                relational databases (RDBMS), test driven development (TDD), object-relational mapping (ORM), and the Spring Framework, and gained a deeper understanding of
+                                web design and best practices in Java development.
+                            </Typography>
+                            <Typography variant="body1" mb={1}>
+                                At Ford, I've been developing and maintaining microservices built with Spring Boot and single-page web apps built with Angular, as well as maintaining CI/CD pipelines
+                                built in Jenkins and building new pipelines with Tekton.
+                            </Typography>
+                        </CardContent>
+                    </Card>
                 </Grid>
                 <Grid item lg={3} xs={10}>
                     <Typography variant="h2">
