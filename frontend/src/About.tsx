@@ -21,7 +21,7 @@ class About extends React.Component {
                                 My journey into tech began when I attended the first Detroit Maker Faire at ten years old, which sparked my interest in building things.
                                 I played around with carpentry and electronics, but was far more fascinated by the microcontroller embedded within my electronics kit than anything else.
                                 During a daycamp focusing on game development with Blender, I was shown glimpses of the power of the embedded Python interpreter over the drag-and-drop logic system I used.
-                                This lead me to exploring the basics of programming with <Link href="https://justbasic.com/index.html" underline="hover">Just BASIC</Link>, before I jumped into
+                                This led me to exploring the basics of programming with <Link href="https://justbasic.com/index.html" underline="hover">Just BASIC</Link>, before I jumped into
                                 Python so I could fiddle with its game libraries.
                             </Typography>
                             <Typography variant="body1" mb={1}>
